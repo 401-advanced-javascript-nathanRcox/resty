@@ -1,0 +1,18 @@
+body {
+  background-color: cornflowerblue;
+  margin: auto;
+  width: 50%;
+}
+
+#root {
+  border: 5px dotted white;
+  margin-top: 5vh;
+  background-color: rgba(248, 161, 0, 0.8);;
+
+  section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3% 3% 0% 3%;
+  }
+}
