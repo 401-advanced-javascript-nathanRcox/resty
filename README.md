@@ -4,7 +4,11 @@
 
 ### Author: Nathan
 
-### Links and Resources
+### Links
+
+- [Deployed on GitHub Pages](https://401-advanced-javascript-nathanrcox.github.io/resty/)
+
+### Resources
 
 - [Getting headers from a React fetch method](https://medium.com/@stevemillerdotdev/getting-response-headers-with-the-javascript-fetch-api-799c83c6480e)
 
