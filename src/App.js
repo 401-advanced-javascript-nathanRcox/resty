@@ -10,15 +10,15 @@ class App extends React.Component {
     super(props);
       this.state = {
         count: 0,
+        headers: [],
         results: []
       }
     }
 
-  getApiResults = (apiResults) => {
-    // console.log('API RESULTS FULL:', apiResults);
-    // console.log('API RESULTS COUNT:', apiResults.count);
-    // console.log('API RESULTS.RESULTS:', apiResults.results);
+  getApiResults = (apiResults, headers) => {
+    console.log('HEADERS on App.JS:', headers);
     this.setState({ count: apiResults.count, results: apiResults.results })
+    this.setState({ headers: headers })
   }
 
   render() {

@@ -8,18 +8,23 @@ class Form extends React.Component {
       display: false,
       input: '',
       route: 'get',
+      headers: []
     }
   }
   
   getApiResults = async () => {
-    const url = `${this.state.input}`;
+    const url = this.state.input;
     const apiResults = await fetch(url, { method: this.state.route, mode: 'cors' })
       .then(response => {
         if (response.status !==200) return;
+        for (let headers of response.headers.entries()) {
+          this.setState({ headers: headers })
+        };
         return response.json();
-    });
-    // console.log('API', apiResults);
-    this.props.returnApiResults(apiResults);
+    })
+    this.props.returnApiResults(apiResults, this.state.headers);
+
+    
   }
 
   handleInput = event => {
