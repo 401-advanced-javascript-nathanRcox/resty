@@ -1,4 +1,4 @@
-import React from 'react'; 
+import React from 'react';
 import './form.scss';
 
 class Form extends React.Component {
@@ -7,49 +7,61 @@ class Form extends React.Component {
     this.state = {
       display: false,
       input: '',
-      route: '',
+      route: 'get',
     }
   }
   
+  getApiResults = async () => {
+    const url = `${this.state.input}`;
+    const apiResults = await fetch(url, { method: this.state.route, mode: 'cors' })
+      .then(response => {
+        if (response.status !==200) return;
+        return response.json();
+    });
+    // console.log('API', apiResults);
+    this.props.returnApiResults(apiResults);
+  }
+
   handleInput = event => {
     event.preventDefault();
-    const userInput = event.target.url.value;
+    const userInput = event.target.value;
     this.setState({ input: userInput });
 
-    if(this.state.route) { this.setState({ display: true })};
+    if(this.state.route) { 
+      this.setState({ display: true });
+    };
   }
 
   handleClick = event => {
     event.preventDefault();
     let userSelection = event.target.value;
     this.setState({ route: userSelection });
+    this.getApiResults();
 
     if(this.state.input) { this.setState({ display: true })};
   }
 
   render() {
-    console.log('STATE:', this.state)
+    // console.log('STATE:', this.state)
+
     return (
       <>
-        <form id="url-submit" onSubmit={this.handleInput}>
-          <textarea  placeholder="Enter your API's url here and choose your action below." name="url" />
-          <button type="submit">Submit URL</button>
+        <form id="url-submit" onBlur={this.handleInput}>
+            <textarea  placeholder="Enter your API's url here and choose your action below." name="url" />
+          <div id="route-selection" onClick={this.handleClick}>
+            <input type="submit" value="post" />
+            <input type="submit" value="get" /> 
+            <input type="submit" value="put" /> 
+            <input type="submit" value="delete" />
+          </div>
+          {/* <button onClick={this.getApiResults} type="submit">Submit URL+Route</button> */}
         </form>
-        <form id="route-selection" onClick={this.handleClick}>
-          <input type="submit" value="POST" />
-          <input type="submit" value="GET" /> 
-          <input type="submit" value="PUT" /> 
-          <input type="submit" value="DELETE" />
-        </form>
+
         { !this.state.display ? "" : 
         <div id="rendered-input">
-          {/* <h2 id="route">Route: {this.state.route}</h2> */}
-          <p id="URL">URL / ROUTE:
-            <h2> {this.state.input}/{this.state.route}</h2>
-          </p>
+          <h2 id="URL">API URL: {this.state.input}/{this.state.route}</h2>
         </div>
         }
-
       </>
     )
   }
