@@ -1,4 +1,4 @@
-# LAB - Class 26
+# LAB - Class 26 - 29
 
 ## Project: RESTy React App
 
@@ -12,18 +12,23 @@
 
 ### Setup
 
-#### User Stories
+#### Phase 1 (lab 26) User & Developer Stories
 
 - As a user, I expect an easy-to-read and understandable user interface, so that I can use the application intuitively.
 - As a user, I want to enter the URL to a REST API and select the REST method to use to access it.
 - As a user, I want visual confirmation that my entries and selections are valid, so that I have confidence the application will be able to fetch the API data that I’ve requested.
 
-#### Developer Stories
+---
 
 - As a developer, I want to create a visually appealing site with a header, footer, and a large content area.
 - As a developer, I want to create a form that asks for a URL.
 - As a developer, I want to create buttons that let the user choose from the REST methods of get, post, put, and delete.
 - When the form is filled out and the button is clicked, I want to display the URL and the method chosen.
+
+#### Phase 2 (lab 27) User & Developer Stories
+
+- As a user, I want to enter the URL to an API and issue a GET request so that I can retrieve it’s data.
+- As a user, I want to see the results returned from an API request in my browser in a readable format.
 
 #### `.env` requirements (where applicable)
 
@@ -38,12 +43,13 @@
 
 #### How to use your library (where applicable)
 
-#### Tests
+### Tests
 
-<!-- - How do you run tests?
+- To run tests, type npm test in the command line from the root directory.
 - Any tests of note?
-- Describe any tests that you did not complete, skipped, etc -->
+- Describe any tests that you did not complete, skipped, etc.:
 
-#### UML
+### UML
 
 ![UML](./assets/lab26-UML.png)
+![UML Lab 27](./assets/lab27-UML.png)
