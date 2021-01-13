@@ -11,7 +11,8 @@ class App extends React.Component {
       this.state = {
         count: 0,
         headers: [],
-        results: []
+        results: [],
+        display: false
       }
     }
 
@@ -19,6 +20,7 @@ class App extends React.Component {
     console.log('HEADERS on App.JS:', headers);
     this.setState({ count: apiResults.count, results: apiResults.results })
     this.setState({ headers: headers })
+    if(this.state) { this.setState({display: true}) }
   }
 
   render() {
@@ -29,9 +31,11 @@ class App extends React.Component {
         <Form 
           returnApiResults={this.getApiResults}  
         />
-        <Results 
-          apiResults={this.state}
-        />
+        { !this.state.display ? "" : 
+          <Results 
+            apiResults={this.state}
+          />
+        }
         <Footer />
       </section>
     )
@@ -39,3 +43,10 @@ class App extends React.Component {
 }
 
 export default App;
+
+
+// { !this.state.display ? "" : 
+// <div id="rendered-input">
+//   <h2 id="URL">API URL: {this.state.input}/{this.state.route}</h2>
+// </div>
+// }
