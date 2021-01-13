@@ -6,6 +6,8 @@
 
 ### Links and Resources
 
+- [Getting headers from a React fetch method](https://medium.com/@stevemillerdotdev/getting-response-headers-with-the-javascript-fetch-api-799c83c6480e)
+
 <!-- - [ci/cd](http://xyz.com) (GitHub Actions)
 - [back-end server url](http://xyz.com) (when applicable)
 - [front-end application](http://xyz.com) (when applicable) -->
