@@ -43,10 +43,3 @@ class App extends React.Component {
 }
 
 export default App;
-
-
-// { !this.state.display ? "" : 
-// <div id="rendered-input">
-//   <h2 id="URL">API URL: {this.state.input}/{this.state.route}</h2>
-// </div>
-// }
