@@ -2,18 +2,19 @@
   width: 100%;
   // display: flex;
   margin-bottom: 4vh;
-
-}
-textarea {
-  font-size: 20px;
-  background-color: cornflowerblue;
-  width: 80%;
-  margin-right: 1.5vw;
-  // padding-left: .5vw;
-  color: rgba(248, 161, 0, 0.8);
-  font-weight: bolder;
-  border: 2px dotted white;
-  outline: none;
+  
+  input {
+    font-size: 20px;
+    background-color: cornflowerblue;
+    width: 98.5%;
+    margin-bottom: 1.5vw;
+    padding: 2vh 0 2vh .5vw;
+    color: rgba(248, 161, 0, 0.8);
+    font-weight: bolder;
+    border: 2px dotted white;
+    outline: none;
+  }
+  
 }
   button {
     width: 7vw;
@@ -29,8 +30,8 @@ textarea {
   }
 
 #route-selection {
-  // display: flex;
-  // justify-content: space-around;
+  display: flex;
+  justify-content: space-around;
   width: 100%;
 
   input {
@@ -57,7 +58,7 @@ textarea {
 }
 
 #rendered-input {
-  margin-top: 3vh;
+  // margin-top: 1vh;
   border: 2px dotted white;
   width: 100%;
   padding: 1%;
@@ -72,7 +73,6 @@ textarea {
     color: white;
     display: inline;
     font-size: 3vh;
-
   }
 }
 
