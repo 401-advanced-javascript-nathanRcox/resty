@@ -8,21 +8,22 @@ class Form extends React.Component {
       display: false,
       input: '',
       route: 'get',
-      headers: []
     }
   }
   
   getApiResults = async () => {
     const url = this.state.input;
+    let headers = {};
     const apiResults = await fetch(url, { method: this.state.route, mode: 'cors' })
-      .then(response => {
+      .then(response => { // or let data = await apiResults.json();
         if (response.status !==200) return;
-        for (let headers of response.headers.entries()) {
-          this.setState({ headers: headers })
+        for (let pair of response.headers.entries()) {
+          headers[pair[0]] = pair[1]
+          // this.setState({ headers: headers })
         };
         return response.json();
     })
-    this.props.returnApiResults(apiResults, this.state.headers);
+    this.props.returnApiResults(apiResults, headers);
 
     
   }
@@ -48,11 +49,11 @@ class Form extends React.Component {
 
   render() {
     // console.log('STATE:', this.state)
-
+    // https://pokeapi.co/api/v2/pokemon
     return (
       <>
         <form id="url-submit" onBlur={this.handleInput}>
-            <textarea  placeholder="Enter your API's url here and choose your action below." name="url" />
+            <input type="text"  placeholder="Enter your API's url here and choose your action below." name="url" />
           <div id="route-selection" onClick={this.handleClick}>
             <input type="submit" value="post" />
             <input type="submit" value="get" /> 
