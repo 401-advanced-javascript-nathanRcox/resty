@@ -1,9 +1,10 @@
 import React from 'react';
-import Header from './components/header/header';
-import Footer from './components/footer/footer';
-import Form from './components/forms/form';
-import Results from './components/results/result';
-import './components/app.scss';
+import Header from '../header/header';
+import Footer from '../footer/footer';
+import Form from '../forms/form';
+import Results from '../results/result';
+// import './reset.scss';
+import './app.scss';
 
 class App extends React.Component {
   constructor(props) {

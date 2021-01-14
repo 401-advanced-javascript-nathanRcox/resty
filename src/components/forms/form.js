@@ -6,13 +6,13 @@ class Form extends React.Component {
     super(props);
     this.state = {
       display: false,
-      input: '',
+      url: '',
       route: 'get',
     }
   }
   
   getApiResults = async () => {
-    const url = this.state.input;
+    const url = this.state.url;
     let headers = {};
     const apiResults = await fetch(url, { method: this.state.route, mode: 'cors' })
       .then(response => { // or let data = await apiResults.json();
@@ -24,14 +24,12 @@ class Form extends React.Component {
         return response.json();
     })
     this.props.returnApiResults(apiResults, headers);
-
-    
   }
 
   handleInput = event => {
     event.preventDefault();
     const userInput = event.target.value;
-    this.setState({ input: userInput });
+    this.setState({ url: userInput });
 
     if(this.state.route) { 
       this.setState({ display: true });
@@ -44,7 +42,7 @@ class Form extends React.Component {
     this.setState({ route: userSelection });
     this.getApiResults();
 
-    if(this.state.input) { this.setState({ display: true })};
+    if(this.state.url) { this.setState({ display: true })};
   }
 
   render() {
@@ -65,7 +63,7 @@ class Form extends React.Component {
 
         { !this.state.display ? "" : 
         <div id="rendered-input">
-          <h2 id="URL">API URL: {this.state.input}/{this.state.route}</h2>
+          <h2 id="URL">API URL: {this.state.url}/{this.state.route}</h2>
         </div>
         }
       </>
