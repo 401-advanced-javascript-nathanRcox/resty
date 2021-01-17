@@ -13,20 +13,19 @@ class Form extends React.Component {
   
   getApiResults = async (route) => {
     const url = this.state.url;
-    // let headers = {};
-    console.log('URL:', url);
-    const apiResults = await fetch(url, { method: route, mode: 'no-cors' })
+    let headers = {};
+    const apiResults = await fetch(url, { method: route, mode: 'cors' })
       .then(response => { // or let data = await apiResults.json();
         // console.log('Response', response.json());
         if (response.status !==200) return;
-        // for (let pair of response.headers.entries()) {
-        //   headers[pair[0]] = pair[1]
-        // };
+        for (let pair of response.headers.entries()) {
+          headers[pair[0]] = pair[1]
+        };
         // console.log('RESPONSE:', response.json());
         return response.json();
     })
-    // console.log('API RESULTS on FORM:', apiResults.results);
-    this.props.returnApiResults(apiResults);
+    console.log('API RESULTS on FORM:', apiResults, headers);
+    this.props.returnApiResults(apiResults, headers);
   }
 
   handleInput = event => {

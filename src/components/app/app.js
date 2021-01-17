@@ -11,7 +11,7 @@ class App extends React.Component {
     super(props);
       this.state = {
         // count: 0,
-        // headers: {},
+        headers: {},
         results: [],
         display: false
       }
@@ -19,7 +19,7 @@ class App extends React.Component {
 
   getApiResults = (apiResults, headers) => {
     // console.log('HEADERS on App.JS:', headers);
-    // this.setState({ count: apiResults.count, results: apiResults.results, headers })
+    this.setState({ headers, results: apiResults,  })
     console.log('apiResults on App.js:', apiResults);
     if(this.state) { this.setState({display: true}) }
   }
