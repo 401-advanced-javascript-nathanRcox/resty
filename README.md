@@ -7,14 +7,13 @@
 ### Links
 
 - [Deployed on GitHub Pages](https://401-advanced-javascript-nathanrcox.github.io/resty/)
+- [Heroku API Auth App](https://nrc-api-server.herokuapp.com/)
 
 ### Resources
 
 - [Getting headers from a React fetch method](https://medium.com/@stevemillerdotdev/getting-response-headers-with-the-javascript-fetch-api-799c83c6480e)
 
-<!-- - [ci/cd](http://xyz.com) (GitHub Actions)
-- [back-end server url](http://xyz.com) (when applicable)
-- [front-end application](http://xyz.com) (when applicable) -->
+ <!-- - [ci/cd](http://xyz.com) (GitHub Actions) -->
 
 ### Setup
 
