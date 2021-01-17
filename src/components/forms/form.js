@@ -7,23 +7,26 @@ class Form extends React.Component {
     this.state = {
       display: false,
       url: '',
-      route: 'get',
+      route: '',
     }
   }
   
-  getApiResults = async () => {
+  getApiResults = async (route) => {
     const url = this.state.url;
-    let headers = {};
-    const apiResults = await fetch(url, { method: this.state.route, mode: 'cors' })
+    // let headers = {};
+    console.log('URL:', url);
+    const apiResults = await fetch(url, { method: route, mode: 'no-cors' })
       .then(response => { // or let data = await apiResults.json();
+        // console.log('Response', response.json());
         if (response.status !==200) return;
-        for (let pair of response.headers.entries()) {
-          headers[pair[0]] = pair[1]
-          // this.setState({ headers: headers })
-        };
+        // for (let pair of response.headers.entries()) {
+        //   headers[pair[0]] = pair[1]
+        // };
+        // console.log('RESPONSE:', response.json());
         return response.json();
     })
-    this.props.returnApiResults(apiResults, headers);
+    // console.log('API RESULTS on FORM:', apiResults.results);
+    this.props.returnApiResults(apiResults);
   }
 
   handleInput = event => {
@@ -40,26 +43,29 @@ class Form extends React.Component {
     event.preventDefault();
     let userSelection = event.target.value;
     this.setState({ route: userSelection });
-    this.getApiResults();
 
-    if(this.state.url) { this.setState({ display: true })};
+    if(this.state.url) {
+      this.setState({ display: true });
+      this.getApiResults(userSelection);
+    }
+
   }
 
   render() {
-    // console.log('STATE:', this.state)
+    console.log('FORM STATE:', this.state)
     // https://pokeapi.co/api/v2/pokemon
     return (
       <>
         <form id="url-submit" onBlur={this.handleInput}>
             <input type="text"  placeholder="Enter your API's url here and choose your action below." name="url" />
-          <div id="route-selection" onClick={this.handleClick}>
+          {/* <button onClick={this.getApiResults} type="submit">Submit URL+Route</button> */}
+        </form>
+        <div id="route-selection" onClick={this.handleClick}>
             <input type="submit" value="post" />
             <input type="submit" value="get" /> 
             <input type="submit" value="put" /> 
             <input type="submit" value="delete" />
-          </div>
-          {/* <button onClick={this.getApiResults} type="submit">Submit URL+Route</button> */}
-        </form>
+        </div>
 
         { !this.state.display ? "" : 
         <div id="rendered-input">

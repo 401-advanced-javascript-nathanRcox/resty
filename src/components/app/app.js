@@ -10,21 +10,22 @@ class App extends React.Component {
   constructor(props) {
     super(props);
       this.state = {
-        count: 0,
-        headers: {},
+        // count: 0,
+        // headers: {},
         results: [],
         display: false
       }
     }
 
   getApiResults = (apiResults, headers) => {
-    console.log('HEADERS on App.JS:', headers);
-    this.setState({ count: apiResults.count, results: apiResults.results, headers })
+    // console.log('HEADERS on App.JS:', headers);
+    // this.setState({ count: apiResults.count, results: apiResults.results, headers })
+    console.log('apiResults on App.js:', apiResults);
     if(this.state) { this.setState({display: true}) }
   }
 
   render() {
-    console.log('APP.JS STATE:', this.state);
+    // console.log('APP.JS STATE:', this.state);
     return (
       <section>
         <Header />
