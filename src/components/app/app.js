@@ -18,9 +18,7 @@ class App extends React.Component {
     }
 
   getApiResults = (apiResults, headers) => {
-    // console.log('HEADERS on App.JS:', headers);
-    this.setState({ headers, results: apiResults,  })
-    console.log('apiResults on App.js:', apiResults);
+    this.setState({ headers, results: apiResults  })
     if(this.state) { this.setState({display: true}) }
   }
 

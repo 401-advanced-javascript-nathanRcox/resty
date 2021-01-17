@@ -16,15 +16,13 @@ class Form extends React.Component {
     let headers = {};
     const apiResults = await fetch(url, { method: route, mode: 'cors' })
       .then(response => { // or let data = await apiResults.json();
-        // console.log('Response', response.json());
         if (response.status !==200) return;
         for (let pair of response.headers.entries()) {
-          headers[pair[0]] = pair[1]
+          headers[pair[0]] = pair[1];
         };
-        // console.log('RESPONSE:', response.json());
         return response.json();
     })
-    console.log('API RESULTS on FORM:', apiResults, headers);
+    // console.log('API RESULTS on FORM:', apiResults, headers);
     this.props.returnApiResults(apiResults, headers);
   }
 
