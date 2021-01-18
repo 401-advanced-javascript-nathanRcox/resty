@@ -1,6 +1,6 @@
 
 h1 {
-  color: cornflowerblue;
+  color: orange;
   font-size: 5vw;
   position: relative;
   border: 2px dotted white;
@@ -16,7 +16,7 @@ h1:before {
   display: block;
   width: 32%;
   height: .7vw;
-  background: cornflowerblue;
+  color: orange;
   position: absolute;
   left: 0;
   top: 52%;
@@ -27,7 +27,7 @@ h1:after {
   display: block;
   width: 32%;
   height: .7vw;
-  background: cornflowerblue;
+  color: orange;
   position: absolute;
   right: 0;
   top: 52%;

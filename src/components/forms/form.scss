@@ -1,57 +1,66 @@
 #url-submit {
   width: 100%;
   // display: flex;
-  margin-bottom: 4vh;
+  margin-bottom: 1vh;
   
-  input {
-    font-size: 20px;
-    background-color: cornflowerblue;
-    width: 98.5%;
-    margin-bottom: 1.5vw;
-    padding: 2vh 0 2vh .5vw;
-    color: rgba(248, 161, 0, 0.8);
-    font-weight: bolder;
-    border: 2px dotted white;
-    outline: none;
-  }
-  
-}
-  button {
-    width: 7vw;
+  textarea {
     font-size: 1vw;
-    color: rgba(248, 161, 0, 0.8);
-    background-color: cornflowerblue;
-    border-radius: 7px;
-    border: 2px dotted white;
+    background-color: lightblue;
+    width: 98.5%;
+    // margin-top: 1vh;
+    // margin-bottom: 1.5vh;
+    padding: 1vh 0 1vh .5vw;
+    color: orange;
     font-weight: bolder;
+    border: 2px dotted white;
     outline: none;
-    padding: .5vh;
-
   }
+}
+
+#object {
+  // border: 2px white dotted;
+  width: 100%;
+
+  #put-post-text {
+    font-size: 2vh;
+    background-color: lightblue;
+    width: 98.5%;
+    // margin-top: 1vh;
+    // margin-bottom: 1.5vh;
+    padding: 1vh 0 1vh .5vw;
+    color: orange;
+    font-weight: bolder;
+    border: 2px dotted white;
+    outline: none;
+  
+  }
+}
 
 #route-selection {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   width: 100%;
 
   input {
-    width: 10vw;
+    width: 8vw;
     font-size: 2vw;
-    color: rgba(248, 161, 0, 0.8);
-    background-color: cornflowerblue;
+    color: white;
+    background-color: lightblue;
     border-radius: 7px;
     border: 2px dotted white;
     font-weight: bolder;
     outline: none;
+    margin: 1vh;
+    margin-right: 0vw;
   }
 
   input:focus {
-    background-color: rgba(248, 161, 0, 0.8);
+    // background-color: orange;
     color: white;
   }
 
   input:hover {
-    // background-color: rgba(248, 161, 0, 0.8);
+    background-color: orange;
     color:white;
 
   }
@@ -60,22 +69,30 @@
 #rendered-input {
   // margin-top: 1vh;
   border: 2px dotted white;
-  width: 100%;
+  width: 98%;
   padding: 1%;
-  color: cornflowerblue;
+  color: lightblue;
   font-weight: bolder;
+  margin-top: 1vh;
 
   p {
-    font-size: 3vh;
+    font-size: 1vw;
     display: inline;
   }
   h2 {
     color: white;
     display: inline;
-    font-size: 3vh;
+    font-size: 1vw;
   }
 }
 
-::placeholder {
-  color: rgba(248, 161, 0, 0.8);
+textarea::placeholder {
+  color: orange;
+  font-size: 1.2vw;
+
 }
+
+textarea:focus::placeholder {
+  color: transparent;
+}
+
